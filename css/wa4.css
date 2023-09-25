@@ -31,6 +31,8 @@ h2 {
     font-size: 2em;
     line-height: 1.5em;
     }
+
+
 /* Header */
 .card header   {
     background-image: linear-gradient(to bottom,rgba(0,0,0,0.1), rgba(0,0,0,.3));
@@ -53,7 +55,7 @@ h2 {
     
     
 }
-article { 
+.card article { 
     background-color: rgba(0,0,0,.5);
     height: 12em;
     color: #ccc;
