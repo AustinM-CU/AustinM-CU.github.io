@@ -1,0 +1,53 @@
+body {
+    background: url("/img/arsenal.jpg");
+    background-size: cover;
+}
+
+#box1 {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    background-color: red;
+    width: 50px;
+}
+
+#box2 {
+    position: fixed;
+    top: 50px;
+    left: 100px;
+    background-color: grey;
+    text-align: center;
+    width: 50px;
+}
+
+#box3 {
+    position: fixed;
+    top: 50px;
+    left: 150px;
+    background-color: white;
+    width: 50px;
+}
+
+#box4 {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: aliceblue;
+    background-image: url('/img/nbcsn.jpg');
+    background-position: right;
+    background-size: 40px, 40px;
+    text-align: left;
+    width: 250px;
+    height: 50px;
+}
+
+#box5 {
+    position: fixed;
+    Bottom: 50px;
+    right: 250px;
+    background-color: white;
+    height: 50px;
+    width: 100px;
+    text-align: center;
+    line-height: 15px;
+}
