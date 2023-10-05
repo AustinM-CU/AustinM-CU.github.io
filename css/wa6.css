@@ -34,6 +34,7 @@ body {
     right: 50px;
     background-color: aliceblue;
     background-image: url('/img/nbcsn.jpg');
+    /* background-repeat: no-repeat;*/
     background-position: right;
     background-size: 40px, 40px;
     text-align: left;
