@@ -9,7 +9,7 @@ body{
     border-width: 3px;
     border-radius:10px;
     background-color: mediumseagreen;
-    position:relative;
+    position:fixed;
 }
 
 #text1 {
@@ -25,9 +25,8 @@ body{
     border-radius:3px;
     border-color:purple;
     background-color: mediumvioletred;
-    /* position: fixed;
     bottom: 0;
-    left: 0; */
+    left: 0; 
     position:relative;
     left: 40vw;
 }
