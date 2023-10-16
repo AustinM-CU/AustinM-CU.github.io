@@ -8,6 +8,8 @@ body {
   img {
       max-width: 100%;
       display: block;
+      float: left;
+      margin-right: 20px
   }
   
   .logo {
@@ -20,18 +22,28 @@ body {
   .grid {
     margin: 0 auto;
     padding: 0 20px;
-    max-width: 980px;
+    max-width: 1200px; /*I changed this because my screen is longer*/
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 50px;
   }
   
   nav {
     background-color: #000;
     padding: .5em;
+    position: sticky;
+   
+
   }
   
   nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
+    display: flex;
+    justify-content: space-around;
+    
+  
   }
   
   nav a {
@@ -44,8 +56,24 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1px;
+    
   }
 
   .feature {
       width: 200px;
+  }
+  
+  @media (max-width: 500px) {
+    .grid {
+      grid-template-columns: 1fr; 
+      
+    }
+    
+    .photos {
+      grid-template-columns: 1fr; 
+     
+    }
   }
