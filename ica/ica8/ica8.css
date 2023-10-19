@@ -5,8 +5,11 @@ body{
     width: 25vw;
     height: 20vh;
     background-color: indianred;
+    transition: background-color 0.3s;
 }
-
+#box1:hover{
+    background-color: purple;
+}
 
 #box2{
     width: 25vw;
@@ -16,8 +19,16 @@ body{
     animation-duration: 4s;
     animation-name: box2move;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 @keyframes box2move{
+    from{top: 15vw;
+    left: 0vw;
+}
 
-}''
+    to{
+        top: 0vw;
+        left: 15vw;
+    }
+}
