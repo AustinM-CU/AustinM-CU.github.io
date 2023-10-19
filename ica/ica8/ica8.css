@@ -1,0 +1,23 @@
+body{
+    background-color: khaki;
+}
+#box1{
+    width: 25vw;
+    height: 20vh;
+    background-color: indianred;
+}
+
+
+#box2{
+    width: 25vw;
+    height:20vh;
+    position: relative;
+    background-color: orangered;
+    animation-duration: 4s;
+    animation-name: box2move;
+    animation-iteration-count: infinite;
+}
+
+@keyframes box2move{
+
+}''
