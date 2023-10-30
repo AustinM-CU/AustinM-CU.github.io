@@ -1,13 +1,12 @@
-/* Font Family */
 body {
   font-family: 'Georgia', 'Times New Roman', Times, serif;
   margin: 0;
   padding: 0;
-  background-color: #2d3f6b; /* Background color of "sections" */
-  color: #111B36; /* Paragraph text color */
+  background-color: #2d3f6b; /* main screen background color*/
+  color: #111B36; 
 }
 
-/* Main container for the grid */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -19,34 +18,35 @@ body {
 /*HEADER*/
 header {
   text-align: center;
+  
   padding: 20px;
   font-size: 1.25rem;
   background: url('/css-midterm/header.jpg') no-repeat center center;
   background-size: cover;
   position: relative;
-  color: #fff; /* Text color on the photo background */
+  color: #fff; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 
 header h1 {
-  font-size: 1.75rem; /* Adjust the size as needed */
+  font-size: 1.75rem;
   background-color: rgba(0, 0, 0, 0.4); 
   padding: 10px; 
 }
 
 header p {
   font-size: 1.5rem; 
-  background-color: rgba(0, 0, 0, 0.6); /* 50% opacity black background */
-  padding: 10px; /* Adjust padding to your preference */
+  background-color: rgba(0, 0, 0, 0.6); 
+  padding: 10px; 
 }
 
-/* Style for each individual box within the grid */
 .show {
   background-color: #fff;
   border: 5px solid #111B36;
   padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add box shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
+  
 }
 
 .show h3,
