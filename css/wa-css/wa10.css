@@ -1,0 +1,38 @@
+
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
+
+
+
+.story {
+  text-align: center;
+}
+body {
+        font-family: helvetica, sans-serif;
+        width: 350px;
+        }
+
+label {
+        font-weight: bold;
+}
+
+div {
+        padding-bottom: 20px;
+      }
+
+input[type="text"] {
+        padding: 5px;
+        width: 300px;
+        
+        
+      }
+
+p {
+  font-family: 'Dancing Script', cursive;
+    width: 700px;
+        background: #d1cfcf;
+        color: #28211f;
+        font-size: 3em;
+        padding: 10px;
+        visibility: hidden;
+      }
