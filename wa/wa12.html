@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/wa12.css">
+    <title>Hi Hungry I'm Dad</title>
+</head>
+<body>
+    <div class="app">
+        <header>Hi-Hungry,-I'm-Dad.com</header>
+        <section class="quotes">
+            <div class="quote-text" id="js-quote-text"></div>
+        </section>
+        <section class="controls" >
+            <button type="button" id="js-new-joke" class="new-joke button">
+                Generate Corny Joke
+            </button>
+        </section>
+
+        <!-- Rnadom Image Section -->
+        <section class="image">
+            <img id="random-image" alt="Random Image">
+        </section>
+        
+    </div>
+
+    <div id="summary">My extension displays a random image when clicking the "Generate Corny Joke" button. 
+        This image is set form a preset list of images I created. To prevent repeat images upon hitting the button, there is a variable that tracks the index of the previous jokes image.
+         I then use a loop that generates until the image index is different than the one before it. </div>
+
+    <script src="/js/wa12.js"></script>
+</body>
+</html>

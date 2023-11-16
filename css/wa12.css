@@ -1,0 +1,86 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.app {
+    width: 80%; /* Set the width to 80% of the screen */
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.quotes {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.new-joke {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.new-joke:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+.quote-text {
+    font-size: 3em;
+    font-style: italic;
+    color: #333;
+}
+
+.controls {
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .app {
+        width: 90%; 
+    }
+
+    .quote-text {
+        text-align: center;
+    }
+}
+
+#summary {
+    position: fixed;
+    width: 40%;
+    bottom: 20px;
+    font-size: 10px;
+    left: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#random-image {
+    max-width: 60%; 
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
