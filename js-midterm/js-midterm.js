@@ -29,6 +29,9 @@ document.addEventListener('DOMContentLoaded', function () {
         percentageList[i - 1] = percentageDisplay;
     }
 
+    // Initialize the phone number display
+    updatePhoneNumber();
+
     function createCanvasAndDisplays(canvasId, container, index) {
         const canvas = document.createElement('canvas');
         canvas.id = canvasId;
@@ -71,51 +74,52 @@ document.addEventListener('DOMContentLoaded', function () {
         return { percentageDisplay };
     }
 
-    function draw(canvas, x, y, imageData, totalPixels, percentageDisplay, phoneNumberDisplay) {
+    function draw(canvas, x, y, imageData, totalPixels, percentageDisplay, index) {
         const ctx = canvas.getContext('2d');
         const rect = canvas.getBoundingClientRect(); // Get the bounding rectangle of the canvas
-    
+
         // Calculate the actual position on the canvas
         const canvasX = (x - rect.left) / rect.width * canvas.width;
         const canvasY = (y - rect.top) / rect.height * canvas.height;
-    
+
         ctx.fillStyle = '#000';
         ctx.beginPath();
         ctx.arc(canvasX, canvasY, 10, 0, 2 * Math.PI);
         ctx.fill();
-    
+
         const updatedImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    
+
         let filledPixels = 0;
         for (let i = 0; i < totalPixels * 4; i += 4) {
             if (updatedImageData.data[i + 3] !== 0) {
                 filledPixels++;
             }
         }
-    
+
         const percentageDrawn = Math.round((filledPixels / totalPixels) * 100);
         percentageDisplay.textContent = `${percentageDrawn}%`;
-    
-        const phoneNumber = Math.round(percentageDrawn / 10);
-        phoneNumberDisplay.textContent = formatPhoneNumber(phoneNumber);
     }
-    
-    
-    
 
     function updatePhoneNumber() {
         // Calculate the phone number based on the percentages of all canvases
         const phoneNumber = percentageList.map(percentage => {
             const percentageValue = parseInt(percentage.textContent, 10);
-            return isNaN(percentageValue) ? 0 : Math.round(percentageValue / 10);
+            if (isNaN(percentageValue)) {
+                return 'X';
+            } else {
+                return percentageValue === 100 ? '0' : Math.round(percentageValue / 10);
+            }
         }).join('');
-    
+
         // Display the formatted phone number
         phoneDisplay.textContent = formatPhoneNumber(phoneNumber);
     }
-    
 
     function formatPhoneNumber(number) {
+        if (number === 'X') {
+            return 'XXX-XXX-XXX';
+        }
+
         const str = number.toString().padStart(10, '0');
         return `${str.slice(0, 3)}-${str.slice(3, 6)}-${str.slice(6)}`;
     }
