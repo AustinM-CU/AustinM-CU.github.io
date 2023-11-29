@@ -78,10 +78,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const ctx = canvas.getContext('2d');
         const rect = canvas.getBoundingClientRect(); // Get the bounding rectangle of the canvas
 
-        // Calculate the actual position on the canvas
+        // Canvas coordinates
         const canvasX = (x - rect.left) / rect.width * canvas.width;
         const canvasY = (y - rect.top) / rect.height * canvas.height;
 
+        //Make the circle
         ctx.fillStyle = '#000';
         ctx.beginPath();
         ctx.arc(canvasX, canvasY, 10, 0, 2 * Math.PI);
@@ -107,8 +108,33 @@ document.addEventListener('DOMContentLoaded', function () {
             if (isNaN(percentageValue)) {
                 return 'X';
             } else {
-                return percentageValue === 100 ? '0' : Math.round(percentageValue / 10);
+                // Rounding Logic 
+                if (percentageValue === 100) {
+                    return '0';
+                } else if (percentageValue >= 1 && percentageValue <= 19) {
+                    return 1;
+                } else if (percentageValue >= 20 && percentageValue <= 29) {
+                    return 2;
+                } else if (percentageValue >= 30 && percentageValue <= 39) {
+                    return 3;
+                } else if (percentageValue >= 40 && percentageValue <= 49) {
+                    return 4;
+                } else if (percentageValue >= 50 && percentageValue <= 59) {
+                    return 5;
+                } else if (percentageValue >= 60 && percentageValue <= 69) {
+                    return 6;
+                } else if (percentageValue >= 70 && percentageValue <= 79) {
+                    return 7;
+                } else if (percentageValue >= 80 && percentageValue <= 89) {
+                    return 8;
+                } else if (percentageValue >= 90 && percentageValue <= 99) {
+                    return 9;
+                }
+            
+                // Normal rounding for other cases
+                return Math.round(percentageValue / 10);
             }
+            
         }).join('');
 
         // Display the formatted phone number
