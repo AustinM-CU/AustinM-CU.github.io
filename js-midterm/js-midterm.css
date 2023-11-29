@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#percentageContainer {
+    display: flex;
+    margin-top: 20px;
+}
+
+#percentageContainer > div {
+    margin-right: 10px;
+}
+
+#canvasContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+/* Style the circles drawn by the paintbrush */
+canvas {
+    cursor: crosshair;
+    width: 50px;
+    height: 200px;
+}
+
+#phoneDisplay {
+    font-size: 3em;
+    font-family: 'Helvetica', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+}
