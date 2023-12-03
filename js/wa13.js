@@ -70,7 +70,7 @@ function livingWage(){
 livingWage();
 
 // Question 6 
-const wfh = ["Anna","Sean"];
+const wfh = ["Anna","Sam"];
 
 for (let i =0; i < HR["employees"].length; i++){
     if (wfh.includes(HR["employees"][i]["name"])) {
