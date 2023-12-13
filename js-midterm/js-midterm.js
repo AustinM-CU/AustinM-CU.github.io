@@ -163,11 +163,34 @@ document.addEventListener('DOMContentLoaded', function () {
         return `${str.slice(0, 3)}-${str.slice(3, 6)}-${str.slice(6)}`;
     }
 
+    
+
+    // Submit button
+    const submitButton = document.createElement('button');
+    submitButton.textContent = 'Submit Drawing';
+    submitButton.addEventListener('click', submitDrawing);
+        const submitButtonContainer = document.getElementById('submitButtonContainer');
+        if (submitButtonContainer) {
+        submitButtonContainer.appendChild(submitButton);
+        } else {
+        document.body.appendChild(submitButton);
+        }
+
+    function submitDrawing() {
+        const phoneNumber = phoneDisplay.textContent;
+        alert(`${phoneNumber} submitted!`);
+    }
+    
     // Create a reset button
     const resetButton = document.createElement('button');
     resetButton.textContent = 'Reset Canvases';
     resetButton.addEventListener('click', resetCanvases);
-    document.body.appendChild(resetButton);
+        const resetButtonContainer = document.getElementById('resetButtonContainer');
+        if (resetButtonContainer) {
+        resetButtonContainer.appendChild(resetButton);
+        } else {
+        document.body.appendChild(resetButton);
+        }
 
     // Initialize the percentages to 'X%'
     percentageList.forEach(percentageDisplay => {
@@ -191,9 +214,14 @@ document.addEventListener('DOMContentLoaded', function () {
             // Reset percentage display to 'X%'
             percentageList[i - 1].textContent = 'X'
         }
-
+       
+        // Initialize the percentages to 'X%'
+    percentageList.forEach(percentageDisplay => {
+        percentageDisplay.textContent = 'X%';
+    });
         // Update phone number after resetting canvases
         updatePhoneNumber();
     } 
     
+    // END 
     });
