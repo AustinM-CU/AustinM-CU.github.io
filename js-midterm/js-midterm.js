@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Number of rectangular canvases
     const numRectangles = 10;
 
-    // Check and create canvas container if it doesn't exist
+    // Create Canvases Container
     let canvasContainer = document.getElementById('canvasContainer');
     if (!canvasContainer) {
         canvasContainer = document.createElement('div');
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.appendChild(canvasContainer);
     }
 
-    // Check and create percentage list container if it doesn't exist
+    // Create List Percentages Container
     let percentageListContainer = document.getElementById('percentageContainer');
     if (!percentageListContainer) {
         percentageListContainer = document.createElement('ul');
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.appendChild(percentageListContainer);
     }
 
-    // Check and create phone display container if it doesn't exist
+    // Large Display
     let phoneDisplay = document.getElementById('phoneDisplay');
     if (!phoneDisplay) {
         phoneDisplay = document.createElement('div');
@@ -27,16 +27,15 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.appendChild(phoneDisplay);
     }
 
-    // Array to store percentage displays
+    // AI Use 30-39. I was having trouble making everything appear correctly
     const percentageList = new Array(numRectangles).fill(0);
 
-    // Create canvases and displays, and populate the percentageList array
     for (let i = 1; i <= numRectangles; i++) {
         const { percentageDisplay } = createCanvasAndDisplays(`drawCanvas${i}`, canvasContainer, i - 1);
         percentageList[i - 1] = percentageDisplay;
     }
 
-    // Initialize the phone number display
+    // Display Big Number
     updatePhoneNumber();
 
     // Function to create canvases and displays
@@ -53,12 +52,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let isDrawing = false;
         const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        //Calculate Area
         const totalPixels = canvas.width * canvas.height;
 
         const percentageDisplay = document.createElement('div');
         percentageListContainer.appendChild(percentageDisplay);
 
-        // Event listeners for drawing on canvases
+        // Drawing Event Listeners
         canvas.addEventListener('mousedown', function (event) {
             isDrawing = true;
             draw(canvas, event.clientX, event.clientY, imageData.data, totalPixels, percentageDisplay, index);
@@ -83,18 +83,18 @@ document.addEventListener('DOMContentLoaded', function () {
         return { percentageDisplay };
     }
 
-    // Function to draw on canvases and update percentage displays
+    // Drawing Function
     function draw(canvas, x, y, imageData, totalPixels, percentageDisplay, index) {
         const ctx = canvas.getContext('2d');
         const rect = canvas.getBoundingClientRect();
 
-        // Canvas coordinates
         const canvasX = (x - rect.left) / rect.width * canvas.width;
         const canvasY = (y - rect.top) / rect.height * canvas.height;
 
         // Make a circle on the canvas
         ctx.fillStyle = '#000';
         ctx.beginPath();
+        // Reminder: 10 is the circle size
         ctx.arc(canvasX, canvasY, 10, 0, 2 * Math.PI);
         ctx.fill();
 
@@ -107,14 +107,13 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        // Calculate and update percentage drawn
+        // Upadte the % above
         const percentageDrawn = Math.round((filledPixels / totalPixels) * 100);
         percentageDisplay.textContent = `${percentageDrawn}%`;
     }
 
-    // Function to update the phone number based on canvas percentages
+    // Function to update big number
     function updatePhoneNumber() {
-        // Calculate the phone number based on the percentages of all canvases
         const phoneNumber = percentageList.map(percentage => {
             const percentageValue = parseInt(percentage.textContent, 10);
             if (isNaN(percentageValue)) {
@@ -149,11 +148,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         }).join('');
 
-        // Display the formatted phone number
+        // Big number in Phone Number Format
         phoneDisplay.textContent = formatPhoneNumber(phoneNumber);
     }
 
-    // Function to format the phone number
+    // Function to format the phone number^^^
     function formatPhoneNumber(number) {
         if (number === 'X') {
             return 'XXX-XXX-XXX';
@@ -181,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
         alert(`${phoneNumber} submitted!`);
     }
     
-    // Create a reset button
+    // Reset Button
     const resetButton = document.createElement('button');
     resetButton.textContent = 'Reset Canvases';
     resetButton.addEventListener('click', resetCanvases);
@@ -192,12 +191,12 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.appendChild(resetButton);
         }
 
-    // Initialize the percentages to 'X%'
+    // Display Percentages start at X%
     percentageList.forEach(percentageDisplay => {
         percentageDisplay.textContent = 'X%';
     });
 
-    // New function to reset canvases
+    // Reset Canvases Function
     function resetCanvases() {
         // Clear each canvas and redraw borders
         for (let i = 1; i <= numRectangles; i++) {
@@ -216,6 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
        
         // Initialize the percentages to 'X%'
+        //Included twice so after the reset its still therre 
     percentageList.forEach(percentageDisplay => {
         percentageDisplay.textContent = 'X%';
     });
@@ -223,5 +223,5 @@ document.addEventListener('DOMContentLoaded', function () {
         updatePhoneNumber();
     } 
     
-    // END 
+    
     });
